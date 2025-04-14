@@ -4,7 +4,6 @@ API RESTful para gerenciar produtos e vendas de um supermercado, desenvolvida em
 ## Funcionalidades
 - Listar produtos
 - Adicionar novos produtos
-- (Adicione mais conforme o projeto cresce)
 
 ## Como rodar
 1. Clone o repositório: `git clone https://github.com/RenanMunizDev/SupermercadoAPI.git`
