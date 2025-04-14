@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SupermercadoAPI.Models;
 
@@ -6,6 +7,7 @@ namespace SupermercadoAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProdutosController : ControllerBase
     {
         private readonly SupermercadoContext _context;
@@ -16,9 +18,9 @@ namespace SupermercadoAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Produto>>> GetProdutos()
+        public IActionResult Get()
         {
-            return await _context.Produtos.ToListAsync();
+            return Ok(new { message = "Você acessou um endpoint protegido!" });
         }
 
         [HttpGet("{id}")]
